@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#f4d9d0"
+    >
+
+    <title>Una invitación para ti ♡</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <!-- FONDO DECORATIVO -->
+    <div class="background-decoration">
+
+        <div class="light light-one"></div>
+        <div class="light light-two"></div>
+
+        <div class="floating-hearts">
+            <span>♡</span>
+            <span>♡</span>
+            <span>♡</span>
+            <span>♡</span>
+            <span>♡</span>
+            <span>♡</span>
+        </div>
+
+    </div>
+
+
+    <!-- CONTENIDO -->
+    <main class="invitation">
+
+        <section class="invitation-card">
+
+            <p class="eyebrow">
+                ✦ UNA PEQUEÑA INVITACIÓN ✦
+            </p>
+
+            <h1>
+                Tengo algo
+                <span>para ti</span>
+            </h1>
+
+            <p class="intro-text">
+                Primero quiero que veas esto.
+            </p>
+
+
+            <!-- VIDEO -->
+            <div class="video-wrapper">
+
+                <video
+                    id="invitationVideo"
+                    playsinline
+                    controls
+                    preload="metadata"
+                >
+
+                    <source
+                        src="assets/videos/invitacion.mp4"
+                        type="video/mp4"
+                    >
+
+                    Tu navegador no puede reproducir el video.
+
+                </video>
+
+                <div
+                    id="videoGlow"
+                    class="video-glow"
+                ></div>
+
+            </div>
+
+
+            <!-- TEXTO POST VIDEO -->
+            <div
+                id="decisionSection"
+                class="decision-section"
+            >
+
+                <div class="small-heart">
+                    ♡
+                </div>
+
+                <h2>
+                    Entonces...
+                </h2>
+
+                <p>
+                    ¿Aceptas esta invitación?
+                </p>
+
+
+                <div class="buttons">
+
+                    <button
+                        id="acceptButtonOne"
+                        class="accept-button primary"
+                    >
+                        Acepto
+                        <span>♡</span>
+                    </button>
+
+
+                    <button
+                        id="acceptButtonTwo"
+                        class="accept-button purple"
+                    >
+                        Acepto
+                        <span>♡</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <p class="footer">
+                hecha especialmente para ti
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- MENSAJE AL ACEPTAR -->
+    <div
+        id="acceptedOverlay"
+        class="accepted-overlay"
+    >
+
+        <div class="accepted-content">
+
+            <div class="accepted-heart">
+                ♥
+            </div>
+
+            <h2>
+                Sabía que dirías que sí
+            </h2>
+
+            <p>
+                Guarda la fecha ♡
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
