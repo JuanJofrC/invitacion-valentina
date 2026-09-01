@@ -1,4 +1,147 @@
 // ========================================
+// CUENTA REGRESIVA
+// ========================================
+
+const countdownScreen =
+    document.getElementById("countdownScreen");
+
+const daysElement =
+    document.getElementById("days");
+
+const hoursElement =
+    document.getElementById("hours");
+
+const minutesElement =
+    document.getElementById("minutes");
+
+const secondsElement =
+    document.getElementById("seconds");
+
+
+// ========================================
+// FECHA DE APERTURA
+// ========================================
+
+// Colombia = UTC -05:00
+
+const openingDate =
+    new Date(
+        "2026-09-01T18:00:00-05:00"
+    );
+
+
+// ========================================
+// ACTUALIZAR TEMPORIZADOR
+// ========================================
+
+function updateCountdown() {
+
+    const now =
+        new Date();
+
+    const difference =
+        openingDate.getTime()
+        - now.getTime();
+
+
+    // ====================================
+    // YA LLEGÓ LA HORA
+    // ====================================
+
+    if (difference <= 0) {
+
+        daysElement.textContent = "00";
+        hoursElement.textContent = "00";
+        minutesElement.textContent = "00";
+        secondsElement.textContent = "00";
+
+
+        countdownScreen.classList.add(
+            "hidden"
+        );
+
+
+        // Detener temporizador
+
+        clearInterval(countdownInterval);
+
+
+        return;
+
+    }
+
+
+    // ====================================
+    // CÁLCULOS
+    // ====================================
+
+    const days =
+        Math.floor(
+            difference /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (difference %
+                (1000 * 60 * 60 * 24))
+            /
+            (1000 * 60 * 60)
+        );
+
+
+    const minutes =
+        Math.floor(
+            (difference %
+                (1000 * 60 * 60))
+            /
+            (1000 * 60)
+        );
+
+
+    const seconds =
+        Math.floor(
+            (difference %
+                (1000 * 60))
+            /
+            1000
+        );
+
+
+    // ====================================
+    // MOSTRAR
+    // ====================================
+
+    daysElement.textContent =
+        String(days).padStart(2, "0");
+
+    hoursElement.textContent =
+        String(hours).padStart(2, "0");
+
+    minutesElement.textContent =
+        String(minutes).padStart(2, "0");
+
+    secondsElement.textContent =
+        String(seconds).padStart(2, "0");
+
+}
+
+
+// ========================================
+// INICIAR
+// ========================================
+
+updateCountdown();
+
+
+const countdownInterval =
+    setInterval(
+        updateCountdown,
+        1000
+    );
+
+// ========================================
 // ELEMENTOS
 // ========================================
 
